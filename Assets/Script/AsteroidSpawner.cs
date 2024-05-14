@@ -25,6 +25,7 @@ public class AsteroidSpawner : MonoBehaviour
     private void Update()
     {
         spawnTimer += Time.deltaTime;
+        //假設計時器的時間大於1f，就會歸零重來算,然後生成小行星
         if (spawnTimer > spawnRate)
         {
             Debug.Log("Spawning");
