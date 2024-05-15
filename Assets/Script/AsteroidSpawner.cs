@@ -42,6 +42,7 @@ public class AsteroidSpawner : MonoBehaviour
         Vector3 spawnPoint = transform.position + new Vector3(UnityEngine.Random.Range(-spawnerSize.x / 2, spawnerSize.x / 2),
         UnityEngine.Random.Range(-spawnerSize.y / 2, spawnerSize.y / 2),
         UnityEngine.Random.Range(-spawnerSize.z / 2, spawnerSize.z / 2));
+        //生成小行星
         GameObject asteroid = Instantiate(asteroidModel, spawnPoint, transform.rotation);
         //將生成的小行星放到此腳本的遊戲物件內，避免生成一大堆編輯器會很亂
         //this.transform等效

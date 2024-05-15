@@ -45,8 +45,8 @@ public class AsteroidMovement : MonoBehaviour
     {
         //讓世界坐標系移動
         transform.Translate(movementDirection * Time.deltaTime * asteroidSpeed, Space.World);
-        //持續旋轉
-        transform.Rotate(rotationalSpeed * Time.deltaTime, rotationalSpeed * Time.deltaTime, rotationalSpeed * Time.deltaTime);
+        //讓物體向自身y軸正向轉動
+        transform.Rotate(Vector3.up * Time.deltaTime * rotationalSpeed);
 
 
 
