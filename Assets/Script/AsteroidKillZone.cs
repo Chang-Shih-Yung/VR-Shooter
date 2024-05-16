@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class AsteroidKillZone : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    //當小行星進入此區域時，銷毀小行星
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Asteroid"))
+        if (other.gameObject.CompareTag("Asteroid"))
         {
-            Destroy(collision.gameObject);
+            Destroy(other.gameObject);
         }
     }
 }

@@ -11,7 +11,12 @@ public class AsteroidSpawner : MonoBehaviour
     [Header("Rate of spawn")]
     public float spawnRate = 1f;
     [Header("Model to spawn")]
-    [SerializeField] private GameObject asteroidModel;
+    [SerializeField] private GameObject[] asteroidModel;
+    //生成多種小行星
+    //public GameObject[] asteroidModels;
+    
+
+
     private float spawnTimer = 0f;
 
     private void OnDrawGizmos()
@@ -43,7 +48,7 @@ public class AsteroidSpawner : MonoBehaviour
         UnityEngine.Random.Range(-spawnerSize.y / 2, spawnerSize.y / 2),
         UnityEngine.Random.Range(-spawnerSize.z / 2, spawnerSize.z / 2));
         //生成小行星
-        GameObject asteroid = Instantiate(asteroidModel, spawnPoint, transform.rotation);
+        GameObject asteroid = Instantiate(asteroidModel[UnityEngine.Random.Range(0, asteroidModel.Length)], spawnPoint, transform.rotation);
         //將生成的小行星放到此腳本的遊戲物件內，避免生成一大堆編輯器會很亂
         //this.transform等效
         asteroid.transform.SetParent(transform);
