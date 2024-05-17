@@ -14,6 +14,5 @@ public class LaserGun : MonoBehaviour
                 Destroy(hit.collider.gameObject);
             }
         }
-        
     }
 }
